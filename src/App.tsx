@@ -1,12 +1,22 @@
-import { useState, FC  } from 'react'
+import { useState, FC, useEffect  } from 'react'
 
 import './App.css'
 import { Button } from './components/button';
+import { Squares } from './components/Squares';
 
 const App: FC = () => {
   const [buttonColors, setButtonColors] = useState<string[]>(['green', 'red', 'blue']);
 
   const [buttonStates, setButtonStates] = useState<number[]>([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+  const [buttonNumber, setButtonNumber] = useState<number>(0);
+
+
+  useEffect(() => {
+   const result =  needChangeColor(buttonColors[buttonNumber])
+   console.log(result);
+   
+  }, [buttonColors] )
   
   const getElementFromArray = (array: number[] | string[]): number | string => {
     const randomIndex = Math.trunc(Math.random() * array.length)
@@ -29,6 +39,8 @@ const App: FC = () => {
 
   const clickButton = (buttonIndex: number) => {
 
+    setButtonNumber(buttonIndex)
+
     const updatedStates = buttonStates.map((state, index) => {
       if (buttonIndex === index) {
         return getState();
@@ -47,6 +59,7 @@ const App: FC = () => {
 
     setButtonColors(updatedColors)
     setButtonStates(updatedStates)
+    
 
     checkColor(buttonColors[buttonIndex])
 
@@ -73,6 +86,9 @@ const App: FC = () => {
           {buttonColors.map((_, index) => renderButton(index) )}
         </div>
       </div>
+
+      <Squares/>
+      
     </>
   )
 }
