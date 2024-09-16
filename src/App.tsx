@@ -2,7 +2,7 @@ import { useState, FC, useEffect  } from 'react'
 
 import './App.css'
 import { Button } from './components/button';
-import { Squares } from './components/Squares';
+import { SquareCard } from './components/Squares/component';
 
 const App: FC = () => {
   const [buttonColors, setButtonColors] = useState<string[]>(['green', 'red', 'blue']);
@@ -75,19 +75,18 @@ const App: FC = () => {
   }, 0) 
 
 
-
-
   const renderButton = (index: number) => <Button onClick={ () => clickButton(index)} color={buttonColors[index]} />;
 
   return (
     <>
+      
       <div className="card" >
         <div>
           {buttonColors.map((_, index) => renderButton(index) )}
         </div>
       </div>
 
-      <Squares/>
+       <SquareCard/>
       
     </>
   )
