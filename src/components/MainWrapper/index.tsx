@@ -3,11 +3,13 @@ import { MainWindow } from "./components";
 
 export interface MainWrapperProps {
     color?: string;
+    height?: number;
+
 }
 
-export const MainWrapper: FC<PropsWithChildren<MainWrapperProps>> = ({children, color}) => {
+export const MainWrapper: FC<PropsWithChildren<MainWrapperProps>> = ({children, color, height}) => {
  return (
-    <MainWindow color={color}>s
+    <MainWindow height={height} color={color}>
         {children}
     </MainWindow>
  )
