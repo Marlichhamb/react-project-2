@@ -7,6 +7,8 @@ interface WithColor {
 }
 
 export const MainWindow = styled.div<WithColor>`
+margin-top: 10px;
+border-radius: 10px;
 width: 100%;
 height: ${({height}) => heightPropsToString(height)};
 background-color: ${({color}) => color ? color : '#e00bab'};
