@@ -7,6 +7,9 @@ interface WithColor {
 }
 
 export const MainWindow = styled.div<WithColor>`
+display: flex;
+justify-content: center;
+align-items: center;
 margin-top: 10px;
 border-radius: 10px;
 width: 100%;

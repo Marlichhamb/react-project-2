@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export interface MyButtonProps {
-    color: string
+    bgColor: string
 }
 
 export const MyButton = styled.button<MyButtonProps>`
@@ -11,6 +11,6 @@ height: 50px;
 width: 100px;
 border: none;
 border-radius: 5px;
-background-color: ${({color}) => color ? color : 'red'}
+background-color: ${({bgColor}) => bgColor ? bgColor : 'red'}
 
 `

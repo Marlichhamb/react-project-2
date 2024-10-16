@@ -4,7 +4,7 @@ export const BigPlace = styled.div`
 justify-content: center;
 display: flex;
 align-items: center;
-background-color: #5fd3b4;
+background-color: #89c6ed;
 width: 300px;
 height: 300px;
 border-radius: 16px;
