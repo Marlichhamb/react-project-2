@@ -1,24 +1,48 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { MainWrapper } from "./components/MainWrapper";
 import { WorkPlace } from "./components/WorkPlace";
 import { Shtick } from "./components/Shtick";
-import  {cardArrayDefault} from "./constants";
+import { cardArrayDefault} from "./constants/general";
 import { LineWrapper } from "./components/LineWrapper";
 import { Button } from "./components/button";
+import { palette } from "./constants/palette";
 
 const NewApp: FC = () => {
 
-    const [cardArray, setCardArray] = useState(cardArrayDefault)
-
+    const [cardArray, setCardArray] = useState(cardArrayDefault);
+    
     const handlerShtick = (innerIndex: number, exterIndex: number) => {
-        console.log(innerIndex, exterIndex);
+
+        const newCardArray = [...cardArray];
+
+        newCardArray[exterIndex][innerIndex].color = '#58e8d4'
+
+        setCardArray(newCardArray)
+    }
+ console.log('cardArray', cardArray);
+ useEffect(() => {
+
+    console.log("cardArrayDefault", cardArrayDefault);
+
+ }, [cardArrayDefault])
+ 
+ 
+
+    const clearBoard = () => {
+
+        
+        
+        setCardArray(cardArrayDefault);
+
+        console.log('Clicked!');
         
     }
 
  return (
     <>
-
+        
         <WorkPlace> 
+            
             <>
             {/* <Shtick color={cardArray[0][0].color} text={cardArray[0][0].text} borderColor={cardArray[0][0].borderColor}/> */}
             {cardArray.map((arr, exterIndex) => {
@@ -33,8 +57,8 @@ const NewApp: FC = () => {
             </>
         </WorkPlace>
 
-        <MainWrapper color="#ed7249">
-        <Button color="#000000"/>
+        <MainWrapper color={palette.panelColor}>
+        <Button color="#000000" onClick={clearBoard}/>
         </MainWrapper>
 
     </>
