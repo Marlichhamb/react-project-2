@@ -9,7 +9,7 @@ export const PlayerCard = styled.div<PlayerCardProps>`
     justify-content: center;
     align-items: center;
     color: black;
-    background-color: ${({active}) => active ? '#baa6ee' : '#a57fdb'};
+    background-color: ${({active}) => active ? '#b0d7ff' : '#6489da'};
     border-radius: 10px;
     width: 100px;
     height: 60px;
