@@ -20,5 +20,5 @@ export const PlayerCardPannels = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 300px;
-    height: 130px;
+    height: 100px;
 `

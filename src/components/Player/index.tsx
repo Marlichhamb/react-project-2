@@ -4,14 +4,14 @@ import {EPlayerActive} from "../../NewApp.tsx";
 
 export interface PlayerBoxProps {
     active: EPlayerActive;
-    order: 'one' | 'two';
+    order: 'O' | 'X';
 }
 export const PlayerBox: FC<PlayerBoxProps> = ({ active, order }) => {
 const activePlayer = active === order
     return (
 
      <PlayerCard active={activePlayer}>
-         {`${order === 'one' ? 'O' : 'X'}`}
+         {`${order === 'O' ? 'O' : 'X'}`}
      </PlayerCard>
 
 )
